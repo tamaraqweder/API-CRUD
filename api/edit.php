@@ -14,5 +14,8 @@ $password = password_hash($data["password"], PASSWORD_DEFAULT);
 
 $result = $db_obj->update($id, $name, $email, $password);
 
-echo json_encode(["message" => "User updated successfully"]);
-?>
+if ($result) {
+    echo json_encode(["message" => "User updated successfully"]);
+} else {
+    echo json_encode(["message" => "Failed to update user"]);
+}?>

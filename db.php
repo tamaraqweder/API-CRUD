@@ -61,8 +61,7 @@ public function update($id , $name , $email , $password){
                 WHERE id = ?";
 
         $stmt = $this->connect->prepare($sql);
-        $stmt->execute([$name, $email, $password, $id]);
-
+return $stmt->execute([$name, $email, $password, $id]);
         // header("Location: index.php");
 }
 
